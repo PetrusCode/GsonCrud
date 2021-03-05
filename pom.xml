@@ -3,7 +3,7 @@
   <groupId>com.netmind</groupId>
   <artifactId>com.netmind.gson</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+  <packaging>jar</packaging>
   <distributionManagement>
    <repository>
      <id>github</id>
