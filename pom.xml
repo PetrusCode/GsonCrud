@@ -8,7 +8,7 @@
    <repository>
      <id>github</id>
      <name>GitHub PetrusCode Apache Maven Packages</name>
-     <url>https://maven.pkg.github.com/PetrusCode/GsonCrud</url>
+     <url>https://maven.pkg.github.com/PetrusCode/com.netmind.gson</url>
    </repository>
 </distributionManagement>
 
