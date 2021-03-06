@@ -9,7 +9,9 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 import com.netmind.business.contracts.StudentBl;
+import com.netmind.dao.FileManagementsDao;
 import com.netmind.dao.StudentDaoImpl;
+import com.netmind.dao.contracts.StudentDao;
 import com.netmind.model.Student;
 
 public class StudentBlImpl implements StudentBl {
@@ -33,16 +35,14 @@ public class StudentBlImpl implements StudentBl {
 	@Override
 	public boolean add(Student student) throws IOException {
 
-		StudentDaoImpl studentDao = new StudentDaoImpl();
+		StudentDao studentDao = new StudentDaoImpl();
 
 		student.setAge(calculaAge(student.getDateOfBirth()));
 
-		/*
-		 * FileManagementsDao.addTxtStudent(prop.getProperty("TxtFilname"));
-		 * FileManagementsDao.addTxtStudent(prop.getProperty("JsonFilename"));
-		 * logger.info("txt file is created");
-		 * logger.info("json file is created");
-		 */
+		FileManagementsDao.addTxtStudent(prop.getProperty("TxtFilename"));
+
+		logger.info("txt file is created");
+
 		return studentDao.add(student);
 
 	}
@@ -57,7 +57,11 @@ public class StudentBlImpl implements StudentBl {
 
 	@Override
 	public boolean addToJsonFiles(Student student) throws IOException {
-		// TODO Auto-generated method stub
-		return false;
+		StudentDao studentDao = new StudentDaoImpl();
+
+		FileManagementsDao.addTxtStudent(prop.getProperty("JsonFilename"));
+
+		logger.info("json file is created");
+		return studentDao.add(student);
 	}
 }
