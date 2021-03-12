@@ -1,4 +1,4 @@
-package com.netmind.model;
+package com.netmind.common.model;
 
 public enum EnumStudent {
 	ADD_STUDENT(1), CALCULATE_STUDENT_MAX_AGE(2), CALCULATE_AVERAGE_AGE(3), EXIT(4);
