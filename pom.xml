@@ -11,7 +11,12 @@
      <url>https://maven.pkg.github.com/PetrusCode/GsonCrud</url> 
    </repository>
 </distributionManagement>
-
+	
+	<properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>       
+   </properties>
   <dependencies>
 	<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
 <dependency>
@@ -37,8 +42,20 @@
       <artifactId>opencsv</artifactId>
       <version>5.3</version>
 </dependency>
-
- 
+<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.13.2</version>
+	    <scope>test</scope>
+	</dependency>
+	
+ <dependency>
+		<groupId>pl.pragmatists</groupId>
+	    <artifactId>JUnitParams</artifactId>
+	    <version>1.0.5</version>
+	    <scope>test</scope>
+	</dependency>
+	
   </dependencies>
   
   <build>
@@ -51,6 +68,7 @@
             <configuration>
                 <source>1.8</source>
                 <target>1.8</target>
+                <encoding>Cp1252</encoding> 
              </configuration>
         </plugin>
         <plugin>
