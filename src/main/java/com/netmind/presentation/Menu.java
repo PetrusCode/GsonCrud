@@ -10,10 +10,14 @@ import com.netmind.business.StudentBlImpl;
 import com.netmind.business.contracts.StudentBl;
 import com.netmind.common.model.EnumStudent;
 import com.netmind.common.model.Student;
+import com.netmind.dao.StudentDaoImpl;
+import com.netmind.dao.contracts.StudentDao;
 
 public class Menu {
 
 	public static void studentMenu() throws IOException {
+
+		StudentDao studentDao = new StudentDaoImpl();
 		StudentBl studentBl = new StudentBlImpl();
 		Scanner scanner = new Scanner(System.in);
 		EnumStudent enumStudent = null;
@@ -23,8 +27,9 @@ public class Menu {
 
 			try {
 
-				opcion = Integer.parseInt(JOptionPane.showInputDialog(
-						"Que opcion quiere seleccionar?" + "\n 1.Agregar \n 2.Calular estudiante con mayor "
+				opcion = Integer.parseInt(JOptionPane
+						.showInputDialog("Que opcion quiere seleccionar?"
+								+ "\n 1.Agregar \n 2.Calular estudiante con mayor "
 								+ "edad \n 3.Calular la media de edad \n 4.Exit"));
 
 			} catch (Exception e) {
@@ -43,7 +48,8 @@ public class Menu {
 				System.out.println("Calcular el estudiante con mayor edad");
 				break;
 			case CALCULATE_AVERAGE_AGE:
-				System.out.println("Calcular la media de edad de todos los estudiantes ");
+				System.out.println(
+						"Calcular la media de edad de todos los estudiantes ");
 				break;
 
 			default:
@@ -54,7 +60,8 @@ public class Menu {
 		scanner.close();
 	}
 
-	private static void addnewStudents(Student student, Scanner scanner) throws IOException {
+	private static void addnewStudents(Student student, Scanner scanner)
+			throws IOException {
 		System.out.println("Agregar nuevo estudiante");
 
 		System.out.println("Nombre");
